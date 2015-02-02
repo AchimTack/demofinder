@@ -89,7 +89,7 @@ button {
 	box-shadow: 0 0 0.5em #888;
 }
 
-button1 {
+demobutton {
     padding: 12px 24px;
     white-space: normal; 
 	background-color:#304D82; 
@@ -143,10 +143,6 @@ padding-bottom: 20px;}
     text-decoration: none;
     text-shadow: 1px 1px 1px #000;
 }
-
-
-
-
 </style>
 
 <script>
@@ -219,9 +215,7 @@ function updateDemoText() {
 </head>
 <body onload="updateDemoText()">
 
-<div class="corner" onClick="updateDemoText()">
-<a href="#">Bundesversion</a>
-</div>
+<div class="corner" onClick="updateDemoText()"> <a href="#">Bundesversion</a> </div>
 
 <div class="container">
 <h1 class="header_image"> <img src="http://www.achim-tack.de/projects/Demofinder/logo.png"> </h1>
@@ -230,7 +224,7 @@ function updateDemoText() {
 
 <div id="output"></div>
 
-<button1 onClick="updateDemoText()" class="unselectable">ANDERE DEMOS!</button1>
+<demobutton onClick="updateDemoText()" class="unselectable">ANDERE DEMOS!</demobutton>
 
 <br><br><p>
 
