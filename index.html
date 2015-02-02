@@ -1,0 +1,270 @@
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Auf die Strassen! </title>
+<meta name="description" content="Welche Demo passt zu mir? Finde es heraus mit dem Demo-Finder!">
+<link rel="image_src"  type="image/png"   href="http://www.achim-tack.de/projects/Demofinder/logo.png" />
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<style>
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+* { box-sizing: border-box; -moz-box-sizing: border-box; -webkit-text-size-adjust: none; }
+
+.i img {
+  width:600px;
+  max-width:100%;
+}
+
+.header_image {
+  margin-top: -29px;
+  margin-bottom: 10px;
+}
+
+.container { text-align: center; width: 800px; max-width:100%; margin: 50px auto; }
+
+html { height: 100%; }
+body {
+  overflow-y: scroll;
+  background-color:#fff;
+  height: 100%;
+}
+body, button { font: 26px 'Roboto Condensed'; -webkit-appearance: none;}
+
+button {
+    padding: 12px 24px;
+    white-space: normal; 
+	background-color:#fff; 
+	border-radius: 20px;
+	cursor: pointer; 
+	cursor: hand;
+	box-shadow: 0 0 0.5em #888;
+}
+
+button1 {
+    padding: 12px 24px;
+    white-space: normal; 
+	background-color:#304D82; 
+	border-radius: 20px;
+	color: #FFFFFF;
+	cursor: pointer; 
+	cursor: hand;
+	box-shadow: 0 0 0.5em #888;
+}
+
+.unselectable {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+h1 { font-size: 40px; font-weight: bold; }
+
+#output {background-color: #fff; padding: 25px 50px; margin: 30px 0; border: 2px groove #ccc; border-radius: 20px; box-shadow: 0 0 1em #888;}
+
+a { color: #69CFFB; }
+
+.textblock { margin-bottom: 10px; }
+
+.extras {margin-top:20px;
+padding-bottom: 20px;}
+
+.corner {
+    background-color: #304D82;
+    overflow: hidden;
+    position: absolute;
+    left: -3em;
+    top: 2.5em;
+
+    -moz-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+
+    -moz-box-shadow: 0 0 1em #888;
+    -webkit-box-shadow: 0 0 1em #888;
+    box-shadow: 0 0 1em #888;
+}
+.corner a {
+    border: 1px solid #2A4270;
+    color: #fff;
+    display: block;
+    font-size:.8em;
+    font-weight:bold;
+    padding: 0.5em 4em;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px #000;
+}
+
+
+
+
+</style>
+
+<script>
+
+function getDemoText() {
+
+	var demoElemente = [[
+	["Patriotische","Besorgte","Kritische","Sanftmütige","Energische","Verstörte","Erschütterte","Rüstige","Aktive",
+	"Gleichgültige","Unentschlossene","Heimatorientierte","Freiheitliche","Empörte","Erlebnisorientierte","Säkulare",
+	"Allergische","Demokratische","Homosexuelle","Heterosexuelle","Betriebsratsverseuchte","Alternativlose"],
+	["Europäer","Griechen","Wutbürger","Moslems","Christen","Hooligans","Hindus","Journalisten","Reichsbürger",
+	"Aluhutträger","Eltern","Impfgegner","Jugendliche","Anwohner","Zionisten","Rentner","Polizisten","Karikaturisten",
+	"Atheisten","Nazis","Deutsche","Dackelbesitzer","Salafisten","Kommunisten","Berliner","Dresdener","Demokraten",
+	"Soldaten","Kriegsdienstverweigerer","Leipziger","Systempresse","Lügenpresse","Terroristen","Illuminaten",
+	"Freimaurer","Globalisierungskritiker","Studenten","Fluglotsen","Zugbegleiter","Karrieristen","Katzenfreunde",
+	"Duschungelcamper","RTL II-Zuschauer","Arte-Zuschauer","Bildungsbürger","Gewerkschafter","Klimaskeptiker",
+	"CSUler","AfDler","Piraten","Gutmenschen","Kampfradler","Hedonisten","Performer","Konservative","Raucher",
+	"Nichtraucher","Helene Fischer Fans","Banker","Gotteskrieger","Ich-AGs","Integrationsverweigerer"],
+	["gegen die","für die"],
+	["Verdammung","Vereinfachung","Islamisierung","Untergrabung","Amerikanisierung","Säkularisierung","Ächtung",
+	"Verstaatlichung","Ausweitung","Christianisierung","Problematisierung","Abschiebung","Reinerhaltung","Leugnung",
+	"Freigabe","Sanktionierung","Verbreitung","Abschaffung","Zerstreuung","Aufweichung","Verteidigung","Aufrechterhaltung"],
+	["des Abendlandes","des Asylrechts","des Morgenlandes","von Kindern","der Lügenpresse","von Chemtrails","der Herdprämien",
+	"der Elbphilharmonie",	"von Sachsen","von Neuschwabenland","von Stuttgart 21","des BER","von Glaubenskriegen","des Wohlstandsmülls",
+	"des Sexualkundeunterichts","des Westens","der Konzerne","von Schusswaffen","von Filterblasen","von Hartz IV","des Sozialstaats",
+	"der Meinungsfreiheit","der NATO","Russlands","der Bilderberg-Konferenz","der Ukraine","des Staates Israel","von Denkverboten",
+	"des Iran","Gottes","des Grundgesetzes","der Pressefreiheit","der Meinungsfreiheit", "der Neuen Weltordnung","eines sozialverträglichen Frühablebens",
+	"des Großkapitals","von Bürgerbegehren","von Steuerbefreiungen","des Demografischen Wandels","des Klimawandels","des Humankapitals",
+	"der Vorratsdatenspeicherung","der Überwachung","von TTIP","von Cannabis","von 9/11","von Kampfdrohnen","von Waffenexporten",
+	"der Mondlandung","des Straßenraums","des Komasaufens","von Rauchverboten","von NRW","des Bahnverkehrs","des Status Quo","von verschärften Verhörmethoden"]
+	]];
+
+	var demoTextList_1 = demoElemente[0][0];
+	var demoTextList_2 = demoElemente[0][1];
+	var demoTextList_3 = demoElemente[0][2];
+	var demoTextList_4 = demoElemente[0][3];
+	var demoTextList_5 = demoElemente[0][4];
+
+	var demoText_1 = demoTextList_1[Math.floor(Math.random()*demoTextList_1.length)];
+	var demoText_2 = demoTextList_2[Math.floor(Math.random()*demoTextList_2.length)];
+	var demoText_3 = demoTextList_3[Math.floor(Math.random()*demoTextList_3.length)];
+	var demoText_4 = demoTextList_4[Math.floor(Math.random()*demoTextList_4.length)];
+	var demoText_5 = demoTextList_5[Math.floor(Math.random()*demoTextList_5.length)];
+	
+	demoText_5_abkuerzung = demoText_5.split(' ')[1];
+
+	textBausteine = [demoText_1,demoText_2,demoText_3,demoText_4,demoText_5]
+	abkuerzungsBausteine = [
+	demoText_1.substring(0,2).substring(0,1).toUpperCase() + demoText_1.substring(1,2),
+	demoText_2.substring(0,2).substring(0,1).toUpperCase() + demoText_2.substring(1,2),
+	demoText_3.substring(0,2).substring(0,1).toUpperCase() + demoText_3.substring(1,2),
+	demoText_4.substring(0,2).substring(0,1).toUpperCase() + demoText_4.substring(1,2),
+	demoText_5_abkuerzung.substring(0,2).substring(0,1).toUpperCase() + demoText_5_abkuerzung.substring(1,2)
+	]
+
+	ergebnisText = demoText_1 + " " + demoText_2 + "<br>" + demoText_3 + "<br>" + demoText_4 + " " + demoText_5
+	abkuerzungsText = "#"+abkuerzungsBausteine.join("").toUpperCase();
+
+	return [ergebnisText, abkuerzungsText];
+}
+
+function updateDemoText() {
+  ergebnisText = getDemoText()[0]
+  ergebnisKuerzel = getDemoText()[1]
+  document.getElementById("output").innerHTML = '<span style="font-weight:bold">'+ergebnisKuerzel + "</span><br>" + ergebnisText;
+}
+
+</script>
+
+</head>
+<body onload="updateDemoText()">
+
+<div class="corner" onClick="updateDemoText()">
+<a href="#">Bundesversion</a>
+</div>
+
+<div class="container">
+<h1 class="header_image"> <img src="http://www.achim-tack.de/projects/Demofinder/logo.png"> </h1>
+
+<p class="textblock">Deine Montagsdemo wurde abgesagt? Kein Problem - es gibt Alternativen:</p>
+
+<div id="output"></div>
+
+<button1 onClick="updateDemoText()" class="unselectable">ANDERE DEMOS!</button1>
+
+<br><br><p>
+
+<script type="text/javascript">
+$(document).ready(function () {
+$('#btnTweet').click(function (e) {
+var textToTweet = "Ich gehe zu '"+ergebnisText.replace("<br>", " ").substring(0,80) + "'. Und du? http://bit.ly/15PWgZC #mydemo";
+var twtLink = 'https://twitter.com/home?status=' +encodeURIComponent(textToTweet);
+window.open(twtLink,'_blank');
+});
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+$('#btnFB').click(function (e) {
+var fbLink = 'http://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.achim-tack.de%2Fprojects%2FDemofinder%2Findex.html&t=Demofinder';
+window.open(fbLink,'_blank');
+});
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+$('#btnINFO').click(function (e) {
+var infoLink = 'http://www.achim-tack.org';
+window.open(infoLink,'_blank');
+});
+});
+</script>
+
+<button  id="btnTweet" align ="center" class="unselectable"> <img src="http://www.achim-tack.de/projects/Demofinder/twitter_icon.png"></button>
+<button id="btnFB" align ="center" class="unselectable"> <img src="http://www.achim-tack.de/projects/Demofinder/fb_icon.png"></button>
+<button id="btnINFO" align ="center" class="unselectable"> <img src="http://www.achim-tack.de/projects/Demofinder/info_icon.png"></button>
+
+</body>
+</html>
